@@ -1,0 +1,43 @@
+
+Setting environment for using XAMPP for Windows.
+ASUS@DESKTOP-811NQR0 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use AsistensiWeb;
+Database changed
+MariaDB [AsistensiWeb]> show tables;
++------------------------+
+| Tables_in_asistensiweb |
++------------------------+
+| data_pendaftaran       |
++------------------------+
+1 row in set (0.083 sec)
+
+MariaDB [AsistensiWeb]> data_pendaftaran;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'data_pendaftaran' at line 1
+MariaDB [AsistensiWeb]> desc data_pendaftaran;
++----------------+-----------------------------------------+------+-----+---------+-------+
+| Field          | Type                                    | Null | Key | Default | Extra |
++----------------+-----------------------------------------+------+-----+---------+-------+
+| id             | int(11)                                 | NO   | PRI | NULL    |       |
+| nama_lengkap   | varchar(50)                             | YES  |     | NULL    |       |
+| nama_panggilan | varchar(50)                             | YES  |     | NULL    |       |
+| ttl            | date                                    | YES  |     | NULL    |       |
+| jenis_kelamin  | enum('Laki-laki','Perempuan')           | YES  |     | NULL    |       |
+| notel          | int(15)                                 | YES  |     | NULL    |       |
+| jurusan        | enum('IPA','IPS','BAHASA')              | YES  |     | NULL    |       |
+| agama          | enum('Islam','Kristen','Hindu','Budha') | YES  |     | NULL    |       |
+| motivasi       | text                                    | YES  |     | NULL    |       |
+| foto           | varchar(255)                            | YES  |     | NULL    |       |
++----------------+-----------------------------------------+------+-----+---------+-------+
+10 rows in set (0.494 sec)
+
+MariaDB [AsistensiWeb]>
